@@ -3,13 +3,14 @@ import { StyleSheet } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 
 type Props = {
-    children: ReactNode
+    children: ReactNode,
+    contentCenter?: boolean
 }
 
-export const LinearBackground = ({ children }: Props) => {
+export const LinearBackground = ({ children, contentCenter }: Props) => {
     return(
         <LinearGradient
-            style={styles.container}
+            style={contentCenter ? styles.centerContainer : styles.container}
             colors={['#FFDD67', '#FFCD38']}
             start={{ x: 0, y: 0.5 }}
             end={{ x: 1, y: 0.5 }}
@@ -22,7 +23,10 @@ export const LinearBackground = ({ children }: Props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+    },
+    centerContainer: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
-    },
+    }
 })

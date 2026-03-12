@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Image, Text, View } from "react-native"
+import { Image, StyleSheet } from "react-native"
 import { iconsArray } from "../utils/icons-map"
 
 export const Loading = () => {
@@ -15,8 +15,16 @@ export const Loading = () => {
 
     return(
         <Image
+            style={styles.icon}
             source={iconsArray[index]}
             resizeMode="cover"
         />
     )
 }
+
+const styles = StyleSheet.create({
+    icon: {
+        width: 55,
+        height: 55
+    }
+})

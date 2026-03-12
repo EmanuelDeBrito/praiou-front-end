@@ -1,15 +1,18 @@
-import { Text, StyleSheet } from "react-native"
+import { SafeAreaView, Text, StyleSheet } from "react-native"
 import { Logo } from "../components/logo"
 import { LinearBackground } from "../components/linear-background"
 import { Loading } from "../components/loading"
+import { SafeContainer } from "../components/safe-container"
 
 const Screen = () => {
     return(
-        <LinearBackground>
-            <Logo />
-            <Text style={styles.subtitle}>Seu app de esportes na praia</Text>
-            <Loading />
-        </LinearBackground>
+        <SafeContainer>
+            <LinearBackground contentCenter>
+                <Logo />
+                <Text style={styles.subtitle}>Seu app de esportes na praia</Text>
+                <Loading />
+            </LinearBackground>
+        </SafeContainer>
     )
 }
 
