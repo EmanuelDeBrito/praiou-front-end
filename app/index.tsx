@@ -1,24 +1,21 @@
 import { Text, StyleSheet } from "react-native"
-import { LinearGradient } from "expo-linear-gradient"
+import { Logo } from "../components/logo"
+import { LinearBackground } from "../components/linear-background"
 
 const Screen = () => {
     return(
-        <LinearGradient
-            style={styles.container}
-            colors={['#FFDD67', '#FFCD38']}
-            start={{ x: 0, y: 0.5 }}
-            end={{ x: 1, y: 0.5 }}
-        >
-            <Text>Teste</Text>
-        </LinearGradient>
+        <LinearBackground>
+            <Logo />
+            <Text style={styles.subtitle}>Seu app de esportes na praia</Text>
+        </LinearBackground>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+    subtitle: {
+        color: '4A4A4A',
+        fontSize: 14,
+        fontFamily: 'Montserrat-Light'
     }
 })
 

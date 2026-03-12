@@ -4,7 +4,7 @@ export const Logo = () => {
     return(
         <Image 
             style={styles.logo}
-            source={require('../assets/logo.png')}
+            source={require('../assets/interface-images/logo.png')}
             resizeMode="cover"
         />
     )
