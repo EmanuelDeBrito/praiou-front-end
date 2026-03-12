@@ -8,7 +8,7 @@ export const Loading = () => {
     useEffect(() => {
         const cycle = setInterval(() => {
             setIndex((prev) => (prev === 3 ? 0 : prev + 1))
-        }, 1000)
+        }, 500)
 
         return () => clearInterval(cycle)
     }, [])
