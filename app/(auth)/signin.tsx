@@ -1,8 +1,9 @@
-import { View, StyleSheet, Text } from "react-native"
+import { View, StyleSheet } from "react-native"
 import { SafeContainer } from "../../components/safe-container"
 import { AuthBackground } from "../../components/auth-background"
 import { LinearBackground } from "../../components/linear-background"
 import { AuthHeader } from "../../components/auth-header"
+import { AuthTitle } from "../../components/auth-title"
 
 const Screen = () => {
     return(
@@ -10,7 +11,7 @@ const Screen = () => {
             <LinearBackground>
                 <AuthHeader />
                 <AuthBackground>
-                    
+                    <AuthTitle label="Login" />
                 </AuthBackground>
             </LinearBackground>
         </SafeContainer>
