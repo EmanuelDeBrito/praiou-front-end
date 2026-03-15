@@ -13,7 +13,7 @@ export const InputLabel = ({ label }: Props) => {
 const styles = StyleSheet.create({
     label: {
         color: '#4A4A4A',
-        fontSize: 20,
-        fontFamily: 'Roboto-Regular'
+        fontSize: 22,
+        fontFamily: 'Roboto-Medium'
     }
 })
