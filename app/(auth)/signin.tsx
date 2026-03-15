@@ -5,12 +5,17 @@ import { AuthHeader } from "../../components/auth-header"
 import { AuthTitle } from "../../components/auth-title"
 import { FormArea } from "../../components/form-area"
 import { AuthInput } from "../../components/auth-input"
+import { Button } from "../../components/button"
 import { useState } from "react"
-import { Button } from "react-native"
 
 const Screen = () => {
-    const [email,  setEmail] = useState('Emanuel')
+    const [email,  setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    const handlePress = () => {
+        console.log(email)
+        console.log(password)
+    }
 
     return(
         <SafeContainer>
@@ -35,6 +40,11 @@ const Screen = () => {
                             onChangeText={t => setPassword(t)}
                         />
                     </FormArea>
+
+                    <Button 
+                        label="Login"
+                        handlePress={handlePress}
+                    />
                 </AuthBackground>
             </LinearBackground>
         </SafeContainer>
