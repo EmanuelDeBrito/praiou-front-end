@@ -26,8 +26,7 @@ export const Button = ({ label, handlePress }: Props) => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingVertical: 5,
-        marginTop: 25
+        marginTop: 20
     },
     gradient: {
         justifyContent: 'center',

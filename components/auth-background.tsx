@@ -17,10 +17,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         width: '100%',
-        paddingHorizontal: 20,
-        paddingVertical: 50,
+        padding: 20,
         backgroundColor: '#FFF',
-        borderTopLeftRadius: 40,
-        borderTopRightRadius: 40
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50
     }
 })

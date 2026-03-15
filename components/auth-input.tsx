@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2.2
     },
     inputText: {
-        paddingVertical: 7,
+        paddingVertical: 5,
         color: '#4A4A4A',
         fontSize: 20,
         fontFamily: 'Indie-Regular'
