@@ -15,6 +15,7 @@ const Screen = () => {
 
     const handlePress = () => {
         console.log(email)
+        router.push('/(auth)/send-code')
     }
 
     return(

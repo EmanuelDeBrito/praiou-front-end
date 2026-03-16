@@ -1,5 +1,6 @@
 import { View, Text, TextInput, StyleSheet } from "react-native"
 import { InputLabel } from "./input-label"
+import { router } from "expo-router"
 
 type Props = {
     label: string,
@@ -10,6 +11,10 @@ type Props = {
 }
 
 export const AuthInput = ({ label, placeholder, value, forgotPassword, onChangeText }: Props) => {
+    const handlePress = () => {
+        router.push('/(auth)/send-email')
+    }
+    
     return(
         <View style={styles.container}>
             <InputLabel label={label} />
@@ -22,7 +27,10 @@ export const AuthInput = ({ label, placeholder, value, forgotPassword, onChangeT
                 />
             </View>
             {forgotPassword &&
-                <Text style={styles.forgotPasswordText}>
+                <Text 
+                    style={styles.forgotPasswordText}
+                    onPress={handlePress}
+                >
                     Esqueci a senha
                 </Text>
             }
