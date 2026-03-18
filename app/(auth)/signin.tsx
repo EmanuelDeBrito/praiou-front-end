@@ -17,6 +17,7 @@ const Screen = () => {
     const handlePress = () => {
         console.log(email)
         console.log(password)
+        router.replace('/(main)/home')
     }
 
     return(
