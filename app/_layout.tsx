@@ -1,4 +1,5 @@
 import { Stack } from "expo-router"
+import { TokenProvider } from "../contexts/token-context"
 import { useFonts, Montserrat_300Light_Italic, Montserrat_500Medium, Montserrat_600SemiBold } from "@expo-google-fonts/montserrat"
 import { RobotoMono_400Regular, RobotoMono_500Medium } from "@expo-google-fonts/roboto-mono"
 import { IndieFlower_400Regular } from "@expo-google-fonts/indie-flower"
@@ -18,11 +19,13 @@ const RootLayout = () => {
     }
 
     return(
-        <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="index" />
-            <Stack.Screen name="(auth)" />
-            <Stack.Screen name="(main)" />
-        </Stack>
+        <TokenProvider>
+            <Stack screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="index" />
+                <Stack.Screen name="(auth)" />
+                <Stack.Screen name="(main)" />
+            </Stack>
+        </TokenProvider>
     )
 }
 
