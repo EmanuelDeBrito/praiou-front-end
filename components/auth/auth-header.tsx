@@ -1,5 +1,5 @@
 import { View, StyleSheet } from "react-native"
-import { Logo } from "./logo"
+import { Logo } from "../general/logo"
 
 export const AuthHeader = () => {
     return(
@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        height: '20%',
-        overflow: 'hidden'
+        height: '20%'
     }
 })

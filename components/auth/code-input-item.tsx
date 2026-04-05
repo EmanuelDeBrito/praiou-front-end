@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Indie-Regular',
         borderWidth: 2,
         borderColor: '#FFCD38',
-        borderRadius: 15,
-        textAlign: 'center'
+        borderRadius: 15
     }
 })

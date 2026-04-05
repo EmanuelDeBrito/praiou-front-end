@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react"
 import { Image, StyleSheet } from "react-native"
-import { iconsArray } from "../utils/icons-map"
+import { iconsArray } from "../../utils/icons-map"
+import { useEffect, useState } from "react"
 
 export const Loading = () => {
     const [index, setIndex] = useState(0)

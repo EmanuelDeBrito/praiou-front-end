@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router"
 import { Ionicons } from "@expo/vector-icons"
 
-const TabLayout = () => {
+const MainLayout = () => {
     return(
         <Tabs
             screenOptions={{
@@ -64,4 +64,4 @@ const TabLayout = () => {
     )
 }
 
-export default TabLayout
+export default MainLayout

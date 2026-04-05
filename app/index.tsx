@@ -1,17 +1,20 @@
-import { SafeAreaView, Text, StyleSheet } from "react-native"
-import { useEffect } from "react"
-import { SafeContainer } from "../components/safe-container"
-import { LinearBackground } from "../components/linear-background"
-import { Logo } from "../components/logo"
-import { Loading } from "../components/loading"
+import { Text, StyleSheet } from "react-native"
+import { SafeContainer } from "../components/general/safe-container"
+import { LinearBackground } from "../components/auth/linear-background"
+import { Logo } from "../components/general/logo"
+import { Loading } from "../components/general/loading"
+import { sleep } from "../utils/sleep"
 import { router } from "expo-router"
+import { useEffect } from "react"
 
 const Screen = () => {
     useEffect(() => {
-        const changeScreen = setTimeout(() => {
-            router.replace('/(auth)/signin')    
-        }, 7000)
-        changeScreen
+        const changeScreen = async () => {
+            await sleep(7000)
+            router.replace('/(auth)/signin') 
+        }
+        
+        changeScreen()
     }, [])
 
     return(

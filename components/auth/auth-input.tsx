@@ -1,5 +1,5 @@
 import { View, Text, TextInput, StyleSheet } from "react-native"
-import { InputLabel } from "./input-label"
+import { InputLabel } from "../general/input-label"
 import { router } from "expo-router"
 
 type Props = {
@@ -16,7 +16,7 @@ export const AuthInput = ({ label, placeholder, value, forgotPassword, onChangeT
     }
     
     return(
-        <View style={styles.container}>
+        <View>
             <InputLabel label={label} />
             <View style={styles.inputArea}>
                 <TextInput
@@ -39,7 +39,6 @@ export const AuthInput = ({ label, placeholder, value, forgotPassword, onChangeT
 }
 
 const styles = StyleSheet.create({
-    container: { },
     inputArea: {
         borderBottomColor: '#4A4A4A',
         borderBottomWidth: 2.2
