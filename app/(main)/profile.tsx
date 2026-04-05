@@ -1,10 +1,11 @@
-import { Text, View } from "react-native"
+import { Text } from "react-native"
+import { SafeContainer } from "../../components/general/safe-container"
 
 const Screen = () => {
     return(
-        <View>
+        <SafeContainer>
             <Text>Profile</Text>
-        </View>
+        </SafeContainer>
     )
 }
 
