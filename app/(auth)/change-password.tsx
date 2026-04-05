@@ -1,7 +1,7 @@
 import { SafeContainer } from "../../components/general/safe-container"
 import { LinearBackground } from "../../components/auth/linear-background"
-import { AuthBackground } from "../../components/auth/auth-background"
 import { AuthHeader } from "../../components/auth/auth-header"
+import { AuthBackground } from "../../components/auth/auth-background"
 import { AuthTitle } from "../../components/auth/auth-title"
 import { FormArea } from "../../components/general/form-area"
 import { AuthInput } from "../../components/auth/auth-input"

@@ -17,46 +17,68 @@ const MainLayout = () => {
                     flex: 1,
                     justifyContent: 'center',
                     alignItems: 'center',
-                }
+                },
+                tabBarActiveTintColor: '#4A4A4A',
+                tabBarInactiveTintColor: '#4A4A4A'
             }}
         >
             <Tabs.Screen 
                 name="home"
                 options={{
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons name="home" size={30} color={color} />
+                    tabBarIcon: ({ color, focused }) => (
+                        <Ionicons 
+                            name={focused ? "home" : "home-outline"} 
+                            size={30} 
+                            color={color} 
+                        />
                     )
                 }}
             />
             <Tabs.Screen 
                 name="add-event"
                 options={{
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons name="add-circle" size={30} color={color} />
+                    tabBarIcon: ({ color, focused }) => (
+                        <Ionicons 
+                            name={focused ? "add-circle" : "add-circle-outline"} 
+                            size={30} 
+                            color={color} 
+                        />
                     )
                 }}
             />
             <Tabs.Screen 
                 name="posts"
                 options={{
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons name="people" size={30} color={color} />
+                    tabBarIcon: ({ color, focused }) => (
+                        <Ionicons 
+                            name={focused ? "people" : "people-outline"} 
+                            size={30} 
+                            color={color} 
+                        />
                     )
                 }}
             />
             <Tabs.Screen 
                 name="ranking"
                 options={{
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons name="trophy" size={30} color={color} />
+                    tabBarIcon: ({ color, focused }) => (
+                        <Ionicons 
+                            name={focused ? "trophy" : "trophy-outline"} 
+                            size={30} 
+                            color={color} 
+                        />
                     )
                 }}
             />
             <Tabs.Screen 
                 name="profile"
                 options={{
-                    tabBarIcon: ({ color, size, focused }) => (
-                        <Ionicons name="person" size={30} color={color} />
+                    tabBarIcon: ({ color, focused }) => (
+                        <Ionicons 
+                            name={focused ? "person" : "person-outline"} 
+                            size={30} 
+                            color={color}
+                        />
                     )
                 }}
             />

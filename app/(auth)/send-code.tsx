@@ -1,14 +1,14 @@
 import { View, StyleSheet } from "react-native"
 import { SafeContainer } from "../../components/general/safe-container"
 import { LinearBackground } from "../../components/auth/linear-background"
-import { AuthBackground } from "../../components/auth/auth-background"
 import { AuthHeader } from "../../components/auth/auth-header"
+import { AuthBackground } from "../../components/auth/auth-background"
 import { AuthTitle } from "../../components/auth/auth-title"
+import { InputLabel } from "../../components/general/input-label"
 import { CodeInputItem } from "../../components/auth/code-input-item"
 import { Button } from "../../components/general/button"
 import { AuthWarning } from "../../components/auth/auth-warning"
 import { useState } from "react"
-import { InputLabel } from "../../components/general/input-label"
 
 const Screen = () => {
     const [firstCode,  setFirstCode] = useState('')
