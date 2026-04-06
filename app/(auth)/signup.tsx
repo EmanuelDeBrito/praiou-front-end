@@ -7,6 +7,7 @@ import { FormArea } from "../../components/general/form-area"
 import { AuthInput } from "../../components/auth/auth-input"
 import { Button } from "../../components/general/button"
 import { AuthWarning } from "../../components/auth/auth-warning"
+import { register } from "../../services/api"
 import { router } from "expo-router"
 import { useState } from "react"
 
@@ -16,11 +17,24 @@ const Screen = () => {
     const [password,  setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    const handlePress = () => {
-        console.log(name)
-        console.log(email)
-        console.log(password)
-        console.log(confirmPassword)
+    const handlePress = async () => {
+        if(name && email && password && confirmPassword){
+            if(password === confirmPassword){
+                const response = await register(name, email, password)
+                if(response.success){
+                    console.log("Sucesso ao criar a conta")
+                }
+            }else{
+                console.log("Senhas Diferentes")
+            }
+        }else{
+            console.log("Preencha todas as informações")
+        }
+
+        setName("")
+        setEmail("")
+        setPassword("")
+        setConfirmPassword("")
     }
 
     return(
