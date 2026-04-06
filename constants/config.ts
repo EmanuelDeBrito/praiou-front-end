@@ -1,1 +1,0 @@
-export const baseUrl: string = "http://192.168.5.21:7070"
