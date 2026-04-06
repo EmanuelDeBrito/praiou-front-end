@@ -1,0 +1,1 @@
+export const baseUrl: string = "http://YOUR_IP_HERE:7070"
