@@ -1,10 +1,14 @@
-import { Text } from "react-native"
 import { SafeContainer } from "../../components/general/safe-container"
+import { MainHeader } from "../../components/main/main-header"
 
 const Screen = () => {
     return(
         <SafeContainer>
-            <Text>Home</Text>
+            <MainHeader 
+                image=""
+                name="Mark Grayson"
+                points={1000}
+            />
         </SafeContainer>
     )
 }

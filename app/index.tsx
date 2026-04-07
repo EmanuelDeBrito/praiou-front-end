@@ -10,7 +10,7 @@ import { useEffect } from "react"
 const Screen = () => {
     useEffect(() => {
         const changeScreen = async () => {
-            await sleep(7000)
+            await sleep(1000)
             router.replace('/(auth)/signin') 
         }
         
