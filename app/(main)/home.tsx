@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native"
+import { View, FlatList, StyleSheet } from "react-native"
 import { SafeContainer } from "../../components/general/safe-container"
 import { MainHeader } from "../../components/main/main-header"
 import { MainContainer } from "../../components/main/main-container"
@@ -16,6 +16,7 @@ const Screen = () => {
             <MainContainer>
                 <View style={styles.categoryArea}>
                     <MainSubtitle label="Categorias" />
+
                 </View>
             </MainContainer>
         </SafeContainer>
