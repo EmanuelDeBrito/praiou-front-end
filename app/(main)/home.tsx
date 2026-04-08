@@ -3,6 +3,8 @@ import { SafeContainer } from "../../components/general/safe-container"
 import { MainHeader } from "../../components/main/main-header"
 import { MainContainer } from "../../components/main/main-container"
 import { MainSubtitle } from "../../components/main/main-subtitle"
+import { CategoryItem } from "../../components/main/category-item"
+import { categoryMap } from "../../utils/category-map"
 
 const Screen = () => {
     return(
@@ -16,7 +18,22 @@ const Screen = () => {
             <MainContainer>
                 <View style={styles.categoryArea}>
                     <MainSubtitle label="Categorias" />
+                    <FlatList
+                        data={categoryMap}
+                        renderItem={({ item }) => (
+                            <CategoryItem 
+                                image={item.image}
+                                label={item.name}
+                            />
+                        )}
+                        keyExtractor={(item, index) => index.toString()}
+                        showsHorizontalScrollIndicator={false}
+                        horizontal
+                    />
+                </View>
 
+                <View style={styles.searchArea}>
+                    <MainSubtitle label="Eventos" />
                 </View>
             </MainContainer>
         </SafeContainer>
@@ -26,7 +43,10 @@ const Screen = () => {
 const styles = StyleSheet.create({
     categoryArea: {
         gap: 10,
-        paddingVertical: 30,
+        paddingTop: 30,
+    },
+    searchArea: {
+        paddingTop: 30
     }
 })
 

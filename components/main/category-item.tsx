@@ -37,17 +37,18 @@ const styles = StyleSheet.create({
     container: {
         width: 50,
         height: 50,
-        borderRadius: 10
+        marginRight: 15,
+        overflow: 'hidden',
+        borderRadius: 10,
     },
     linearBackgroundArea: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        gap: 1
     },
     categoryImage: {
-        width: 32,
-        height: 32
+        width: 30,
+        height: 30
     },
     categoryName: {
         color: "#4A4A4A",

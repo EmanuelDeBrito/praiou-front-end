@@ -6,5 +6,6 @@ export const categoryMap: CategoryType[] = [
     { name: 'Surf', image: require('../assets/interface-images/surf.png') },
     { name: 'Tênis', image: require('../assets/interface-images/tenis.png') },
     { name: 'Corrida', image: require('../assets/interface-images/corrida.png') },
-    { name: 'Windsurf', image: require('../assets/interface-images/wind-surf.png') }
+    { name: 'Windsurf', image: require('../assets/interface-images/wind-surf.png') },
+    { name: 'Mergulho', image: require('../assets/interface-images/dive.png') }
 ]
