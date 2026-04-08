@@ -23,9 +23,9 @@ const Screen = () => {
             const response = await login(email, password)
 
             if(response.success !== undefined){
+                await setNewToken(response.token)
                 console.log("Login feito com sucesso")
                 console.log("Token: " + response.token)
-                await setNewToken(response.token)
                 router.replace("/(main)/home")
             }else{
                 console.log("Credenciais inválidas")

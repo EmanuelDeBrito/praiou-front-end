@@ -1,10 +1,15 @@
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import { verifyToken } from "../services/api"
 import { createContext, useContext, useState, useEffect, ReactNode } from "react"
 
 type TokenContextType = {
     token: string,
+    isLogged: boolean,
+    isLoading: boolean,
     setNewToken: (newToken: string) => void,
-    removeToken: () => void
+    removeToken: () => void,
+    setIsLogged: (newStatus: boolean) => void,
+    setIsLoading: (newLoading: boolean) => void
 }
 
 const TokenContext = createContext<null | TokenContextType>(null)
@@ -15,6 +20,8 @@ type TokenProviderType = {
 
 export const TokenProvider = ({ children }: TokenProviderType) => {
     const [token, setToken] = useState("")
+    const [isLogged, setIsLogged] = useState(false)
+    const [isLoading, setIsLoading] = useState(true)
 
     const setNewToken = async (newToken: string) => {
         await AsyncStorage.setItem("token", newToken)
@@ -27,18 +34,31 @@ export const TokenProvider = ({ children }: TokenProviderType) => {
     }
 
     useEffect(() => {
-        const takeToken = async () => {
+        const checkToken = async () => {
+            // Pegando o token armazenado
             const storedToken = await AsyncStorage.getItem("token")
 
+            // Verificando se o token existe
             if(storedToken){
-                setToken(storedToken)
+                // Verificando a validade do token
+                const request = await verifyToken(storedToken)
+
+                // Se for um token valido armazena no contexto e coloca o status de logado como TRUE
+                if(request.success){
+                    setToken(storedToken)
+                    setIsLogged(true)
+                }else{
+                    console.log("Token Inválido")
+                }
             }
+            
+            setIsLoading(false)
         }
-        takeToken()
+        checkToken()
     }, [])
 
     return(
-        <TokenContext.Provider value={{ token, setNewToken, removeToken }}>
+        <TokenContext.Provider value={{ token, isLogged, isLoading, setNewToken, removeToken, setIsLogged, setIsLoading }}>
             {children}
         </TokenContext.Provider>
     )
