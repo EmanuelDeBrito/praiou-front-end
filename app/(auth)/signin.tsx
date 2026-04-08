@@ -13,7 +13,7 @@ import { router } from "expo-router"
 import { useState } from "react"
 
 const Screen = () => {
-    const { setNewToken } = useTokenContext()
+    const { setNewToken, setIsLogged } = useTokenContext()
 
     const [email,  setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -24,6 +24,7 @@ const Screen = () => {
 
             if(response.success !== undefined){
                 await setNewToken(response.token)
+                setIsLogged(true)
                 console.log("Login feito com sucesso")
                 console.log("Token: " + response.token)
                 router.replace("/(main)/home")
