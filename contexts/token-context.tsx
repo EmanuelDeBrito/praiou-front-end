@@ -20,8 +20,8 @@ type TokenProviderType = {
 
 export const TokenProvider = ({ children }: TokenProviderType) => {
     const [token, setToken] = useState("")
-    const [isLogged, setIsLogged] = useState(false)
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLogged, setIsLogged] = useState(true)
+    const [isLoading, setIsLoading] = useState(false)
 
     const setNewToken = async (newToken: string) => {
         await AsyncStorage.setItem("token", newToken)
@@ -33,31 +33,31 @@ export const TokenProvider = ({ children }: TokenProviderType) => {
         setToken("")
     }
 
-    useEffect(() => {
-        const checkToken = async () => {
-            // Pegando o token armazenado
-            const storedToken = await AsyncStorage.getItem("token")
+    // useEffect(() => {
+    //     const checkToken = async () => {
+    //         // Pegando o token armazenado
+    //         const storedToken = await AsyncStorage.getItem("token")
 
-            // Verificando se o token existe
-            if(storedToken){
-                // Verificando a validade do token
-                const request = await verifyToken("aaa")
+    //         // Verificando se o token existe
+    //         if(storedToken){
+    //             // Verificando a validade do token
+    //             const request = await verifyToken("aaa")
 
-                // Se for um token valido armazena no contexto e coloca o status de logado como TRUE
-                if(request.success){
-                    setToken(storedToken)
-                    setIsLogged(true)
-                    console.log("Token Válido")
-                }else{
-                    await removeToken()
-                    console.log("Token Inválido")
-                }
-            }
+    //             // Se for um token valido armazena no contexto e coloca o status de logado como TRUE
+    //             if(request.success){
+    //                 setToken(storedToken)
+    //                 setIsLogged(true)
+    //                 console.log("Token Válido")
+    //             }else{
+    //                 await removeToken()
+    //                 console.log("Token Inválido")
+    //             }
+    //         }
 
-            setIsLoading(false)
-        }
-        checkToken()
-    }, [])
+    //         setIsLoading(false)
+    //     }
+    //     checkToken()
+    // }, [])
 
     return(
         <TokenContext.Provider value={{ token, isLogged, isLoading, setNewToken, removeToken, setIsLogged, setIsLoading }}>
