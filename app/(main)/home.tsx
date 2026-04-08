@@ -43,10 +43,10 @@ const Screen = () => {
 const styles = StyleSheet.create({
     categoryArea: {
         gap: 10,
-        paddingTop: 30,
+        paddingTop: 25,
     },
     searchArea: {
-        paddingTop: 30
+        paddingTop: 20
     }
 })
 

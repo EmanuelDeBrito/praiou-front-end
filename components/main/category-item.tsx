@@ -35,8 +35,8 @@ export const CategoryItem = ({ image, label }: Props) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: 50,
-        height: 50,
+        width: 60,
+        height: 60,
         marginRight: 15,
         overflow: 'hidden',
         borderRadius: 10,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     },
     categoryName: {
         color: "#4A4A4A",
-        fontSize: 9,
+        fontSize: 12,
         fontFamily: 'Indie-Regular'
     }
 })

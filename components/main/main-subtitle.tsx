@@ -13,7 +13,7 @@ export const MainSubtitle = ({ label }: Props) => {
 const styles = StyleSheet.create({
     subtitle: {
         color: '#4A4A4A',
-        fontSize: 20,
+        fontSize: 25,
         fontFamily: 'Roboto-Regular'
     }
 })
