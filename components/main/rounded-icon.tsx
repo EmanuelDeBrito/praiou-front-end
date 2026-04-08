@@ -39,11 +39,12 @@ const styles = StyleSheet.create({
     container: {
         width: 35,
         height: 35,
+        overflow: 'hidden',
         borderRadius: '50%'
     },
     big: {
-        width: 40,
-        height: 40,
+        width: 48,
+        height: 45,
     },
     small: {
         width: 30,
