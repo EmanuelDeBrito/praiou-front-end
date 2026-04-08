@@ -1,8 +1,13 @@
+import { Spinner } from "../../components/general/spinner"
 import { useTokenContext } from "../../contexts/token-context"
 import { Stack, Redirect } from "expo-router"
 
 const AuthLayout = () => {
     const { isLoading, isLogged } = useTokenContext()
+
+    if(isLoading){
+        return <Spinner />
+    }
 
     if(isLogged){
         return <Redirect href={"/(main)/home"} />

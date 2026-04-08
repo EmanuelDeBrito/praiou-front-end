@@ -1,9 +1,14 @@
+import { Spinner } from "../../components/general/spinner"
 import { useTokenContext } from "../../contexts/token-context"
 import { Tabs, Redirect } from "expo-router"
 import { Ionicons } from "@expo/vector-icons"
 
 const MainLayout = () => {
     const { isLoading, isLogged } = useTokenContext()
+
+    if(isLoading){
+        return <Spinner />
+    }
 
     if(!isLogged){
         return <Redirect href={"/(auth)/signin"} />

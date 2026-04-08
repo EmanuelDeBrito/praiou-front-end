@@ -41,17 +41,19 @@ export const TokenProvider = ({ children }: TokenProviderType) => {
             // Verificando se o token existe
             if(storedToken){
                 // Verificando a validade do token
-                const request = await verifyToken(storedToken)
+                const request = await verifyToken("aaa")
 
                 // Se for um token valido armazena no contexto e coloca o status de logado como TRUE
                 if(request.success){
                     setToken(storedToken)
                     setIsLogged(true)
+                    console.log("Token Válido")
                 }else{
+                    await removeToken()
                     console.log("Token Inválido")
                 }
             }
-            
+
             setIsLoading(false)
         }
         checkToken()
