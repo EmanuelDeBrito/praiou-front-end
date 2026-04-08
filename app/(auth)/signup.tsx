@@ -8,7 +8,7 @@ import { AuthInput } from "../../components/auth/auth-input"
 import { Button } from "../../components/general/button"
 import { AuthWarning } from "../../components/auth/auth-warning"
 import { register } from "../../services/api"
-import { router } from "expo-router"
+import { router, Redirect } from "expo-router"
 import { useState } from "react"
 
 const Screen = () => {
@@ -23,6 +23,7 @@ const Screen = () => {
                 const response = await register(name, email, password)
                 if(response.success){
                     console.log("Sucesso ao criar a conta")
+                    return <Redirect href={"/(auth)/signin"} />
                 }
             }else{
                 console.log("Senhas Diferentes")

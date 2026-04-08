@@ -7,17 +7,32 @@ import { FormArea } from "../../components/general/form-area"
 import { AuthInput } from "../../components/auth/auth-input"
 import { Button } from "../../components/general/button"
 import { AuthWarning } from "../../components/auth/auth-warning"
+import { login } from "../../services/api"
+import { useTokenContext } from "../../contexts/token-context"
 import { router } from "expo-router"
 import { useState } from "react"
 
 const Screen = () => {
+    const { setNewToken } = useTokenContext()
+
     const [email,  setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handlePress = () => {
-        console.log(email)
-        console.log(password)
-        router.replace('/(main)/home')
+    const handlePress = async () => {
+        if(email && password){
+            const response = await login(email, password)
+
+            if(response.success !== undefined){
+                console.log("Login feito com sucesso")
+                console.log("Token: " + response.token)
+                await setNewToken(response.token)
+                router.replace("/(main)/home")
+            }else{
+                console.log("Credenciais inválidas")
+            }
+        }else{
+            console.log("Preencha todos os campos")
+        }
     }
 
     return(
