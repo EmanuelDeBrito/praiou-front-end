@@ -6,6 +6,7 @@ import { MainSubtitle } from "../../components/main/main-subtitle"
 import { CategoryItem } from "../../components/main/category-item"
 import { SearchInput } from "../../components/main/search-input"
 import { RoundedIcon } from "../../components/main/rounded-icon"
+import { EventItem } from "../../components/main/event-item"
 import { categoryMap } from "../../utils/category-map"
 import { useState } from "react"
 
@@ -54,6 +55,11 @@ const Screen = () => {
                             big
                             handlePress={handleSearchButton}
                         />
+                    </View>
+                    <View style={{ marginTop: 15, gap: 15 }}>
+                        <EventItem />
+                        <EventItem />
+                        <EventItem />
                     </View>
                 </View>
             </MainContainer>
