@@ -7,6 +7,7 @@ import { CategoryItem } from "../../components/main/category-item"
 import { SearchInput } from "../../components/main/search-input"
 import { RoundedIcon } from "../../components/main/rounded-icon"
 import { EventItem } from "../../components/main/event-item"
+import { Line } from "../../components/main/line"
 import { categoryMap } from "../../utils/category-map"
 import { useState } from "react"
 
@@ -28,6 +29,7 @@ const Screen = () => {
             <MainContainer>
                 <View style={styles.categoryArea}>
                     <MainSubtitle label="Categorias" />
+
                     <FlatList
                         data={categoryMap}
                         renderItem={({ item }) => (
@@ -42,8 +44,9 @@ const Screen = () => {
                     />
                 </View>
 
-                <View style={styles.searchArea}>
+                <View style={styles.eventArea}>
                     <MainSubtitle label="Eventos" />
+                    
                     <View style={styles.formArea}>
                         <SearchInput 
                             placeholder="Pesquise por algum evento"
@@ -56,11 +59,16 @@ const Screen = () => {
                             handlePress={handleSearchButton}
                         />
                     </View>
+
                     <View style={{ marginTop: 15, gap: 15 }}>
                         <EventItem />
                         <EventItem />
                         <EventItem />
                     </View>
+                </View>
+                
+                <View style={styles.eventInfoArea}>
+                    <Line />
                 </View>
             </MainContainer>
         </SafeContainer>
@@ -72,7 +80,7 @@ const styles = StyleSheet.create({
         gap: 10,
         paddingTop: 25,
     },
-    searchArea: {
+    eventArea: {
         paddingTop: 20
     },
     formArea: {
@@ -80,6 +88,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 10,
         marginTop: 10
+    },
+    eventInfoArea: {
+        marginTop: 30
     }
 })
 
