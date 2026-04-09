@@ -1,4 +1,4 @@
-import { View, FlatList, StyleSheet } from "react-native"
+import { View, ScrollView, FlatList, StyleSheet } from "react-native"
 import { SafeContainer } from "../../components/general/safe-container"
 import { MainHeader } from "../../components/main/main-header"
 import { MainContainer } from "../../components/main/main-container"
@@ -7,7 +7,7 @@ import { CategoryItem } from "../../components/main/category-item"
 import { SearchInput } from "../../components/main/search-input"
 import { RoundedIcon } from "../../components/main/rounded-icon"
 import { EventItem } from "../../components/main/event-item"
-import { Line } from "../../components/main/line"
+import { EventInfoItem } from "../../components/main/event-info-item"
 import { categoryMap } from "../../utils/category-map"
 import { useState } from "react"
 
@@ -18,6 +18,14 @@ const Screen = () => {
 
     }
 
+    const handleMyEvents = () => {
+
+    }
+
+    const handleMyInscriptions = () => {
+
+    }
+
     return(
         <SafeContainer>
             <MainHeader 
@@ -25,52 +33,62 @@ const Screen = () => {
                 name="Mark Grayson"
                 points={1000}
             />
+            
+            <ScrollView>
+                <MainContainer>
+                    <View style={styles.categoryArea}>
+                        <MainSubtitle label="Categorias" />
 
-            <MainContainer>
-                <View style={styles.categoryArea}>
-                    <MainSubtitle label="Categorias" />
+                        <FlatList
+                            data={categoryMap}
+                            renderItem={({ item }) => (
+                                <CategoryItem 
+                                    image={item.image}
+                                    label={item.name}
+                                />
+                            )}
+                            keyExtractor={(item, index) => index.toString()}
+                            showsHorizontalScrollIndicator={false}
+                            horizontal
+                        />
+                    </View>
 
-                    <FlatList
-                        data={categoryMap}
-                        renderItem={({ item }) => (
-                            <CategoryItem 
-                                image={item.image}
-                                label={item.name}
+                    <View style={styles.eventArea}>
+                        <MainSubtitle label="Eventos" />
+                        
+                        <View style={styles.formArea}>
+                            <SearchInput 
+                                placeholder="Pesquise por algum evento"
+                                value={eventSearch}
+                                onChangeText={setEventSearch}
                             />
-                        )}
-                        keyExtractor={(item, index) => index.toString()}
-                        showsHorizontalScrollIndicator={false}
-                        horizontal
-                    />
-                </View>
+                            <RoundedIcon 
+                                icon="search"
+                                big
+                                handlePress={handleSearchButton}
+                            />
+                        </View>
 
-                <View style={styles.eventArea}>
-                    <MainSubtitle label="Eventos" />
+                        <View style={{ marginTop: 20, gap: 15 }}>
+                            <EventItem />
+                            <EventItem />
+                            <EventItem />
+                        </View>
+                    </View>
                     
-                    <View style={styles.formArea}>
-                        <SearchInput 
-                            placeholder="Pesquise por algum evento"
-                            value={eventSearch}
-                            onChangeText={setEventSearch}
+                    <View style={styles.eventInfoArea}>
+                        <EventInfoItem 
+                            label="Meus Eventos"
+                            onPress={() => {handleMyEvents}}
                         />
-                        <RoundedIcon 
-                            icon="search"
-                            big
-                            handlePress={handleSearchButton}
+                        <EventInfoItem 
+                            label="Meus Eventos"
+                            bottomLine
+                            onPress={() => {handleMyInscriptions}}
                         />
                     </View>
-
-                    <View style={{ marginTop: 15, gap: 15 }}>
-                        <EventItem />
-                        <EventItem />
-                        <EventItem />
-                    </View>
-                </View>
-                
-                <View style={styles.eventInfoArea}>
-                    <Line />
-                </View>
-            </MainContainer>
+                </MainContainer>
+            </ScrollView>
         </SafeContainer>
     )
 }
@@ -90,7 +108,8 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     eventInfoArea: {
-        marginTop: 30
+        gap: 20,
+        marginVertical: 30
     }
 })
 
