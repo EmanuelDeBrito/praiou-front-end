@@ -41,7 +41,7 @@ export const TokenProvider = ({ children }: TokenProviderType) => {
     //         // Verificando se o token existe
     //         if(storedToken){
     //             // Verificando a validade do token
-    //             const request = await verifyToken("aaa")
+    //             const request = await verifyToken(storedToken)
 
     //             // Se for um token valido armazena no contexto e coloca o status de logado como TRUE
     //             if(request.success){

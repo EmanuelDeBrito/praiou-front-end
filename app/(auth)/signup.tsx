@@ -23,7 +23,7 @@ const Screen = () => {
                 const response = await register(name, email, password)
                 if(response.success){
                     console.log("Sucesso ao criar a conta")
-                    return <Redirect href={"/(auth)/signin"} />
+                    router.replace('/(auth)/signin')
                 }
             }else{
                 console.log("Senhas Diferentes")
