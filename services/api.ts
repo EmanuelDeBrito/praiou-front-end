@@ -55,3 +55,22 @@ export const login = async (email: string, senha: string) => {
         }
     }
 }
+
+export const getAllEvents = async (token: string) => {
+    try{
+        const request = await req.get(
+            "/api/eventos",
+            { 
+                headers: {
+                    "Authorization": token
+                }
+            }
+        )
+
+        return request.data
+    }catch(error: any){
+        if(error.response){
+            return error.response.data
+        }
+    }
+}

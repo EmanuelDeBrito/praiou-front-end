@@ -8,12 +8,13 @@ import { SearchInput } from "../../components/main/search-input"
 import { RoundedIcon } from "../../components/main/rounded-icon"
 import { EventItem } from "../../components/main/event-item"
 import { EventInfoItem } from "../../components/main/event-info-item"
+import { EventType } from "../../types/event-type"
 import { categoryMap } from "../../utils/category-map"
 import { useState } from "react"
 
 const Screen = () => {
     const [eventSearch, setEventSearch] = useState("")
-    const [events, setEvents] = useState("")
+    const [events, setEvents] = useState<EventType[]>([])
 
     const handleSearchButton = () => {
 
