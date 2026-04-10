@@ -8,11 +8,14 @@ import { SearchInput } from "../../components/main/search-input"
 import { RoundedIcon } from "../../components/main/rounded-icon"
 import { EventItem } from "../../components/main/event-item"
 import { EventInfoItem } from "../../components/main/event-info-item"
+import { useTokenContext } from "../../contexts/token-context"
 import { EventType } from "../../types/event-type"
 import { categoryMap } from "../../utils/category-map"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Screen = () => {
+    const { token } = useTokenContext()
+
     const [eventSearch, setEventSearch] = useState("")
     const [events, setEvents] = useState<EventType[]>([])
 
@@ -71,11 +74,21 @@ const Screen = () => {
                             />
                         </View>
 
-                        <View style={{ marginTop: 20, gap: 15 }}>
-                            <EventItem />
-                            <EventItem />
-                            <EventItem />
-                        </View>
+                        <FlatList
+                            style={styles.eventsArea}
+                            data={events}
+                            renderItem={({ item }) => (
+                                <EventItem 
+                                    idEvento={item.idEvento}
+                                    nome={item.nome}
+                                    endereco={item.endereco}
+                                    tipoEvento={item.tipoEvento}
+                                    data={item.data}
+                                    horario={item.horario}
+                                />
+                            )}
+                            keyExtractor={item => item.idEvento.toString()}
+                        />
                     </View>
                     
                     <View style={styles.eventInfoArea}>
@@ -108,6 +121,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: 10,
         marginTop: 10
+    },
+    eventsArea: {
+        marginTop: 20
     },
     eventInfoArea: {
         gap: 20,

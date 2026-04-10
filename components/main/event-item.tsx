@@ -1,7 +1,16 @@
 import { View, Pressable, Image, StyleSheet } from "react-native"
 import { InfoItem } from "./info-item"
 
-export const EventItem = () => {
+type Props = {
+    idEvento: number,
+    nome: string,
+    endereco: string,
+    tipoEvento: string,
+    data: number[],
+    horario: number[]
+}
+
+export const EventItem = ({ idEvento, nome, endereco, tipoEvento, data, horario }: Props) => {
     return(
         <Pressable
             style={styles.container}
