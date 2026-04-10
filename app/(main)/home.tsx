@@ -13,6 +13,7 @@ import { useState } from "react"
 
 const Screen = () => {
     const [eventSearch, setEventSearch] = useState("")
+    const [events, setEvents] = useState("")
 
     const handleSearchButton = () => {
 
@@ -82,7 +83,7 @@ const Screen = () => {
                             onPress={() => {handleMyEvents}}
                         />
                         <EventInfoItem 
-                            label="Meus Eventos"
+                            label="Minhas Inscrições"
                             bottomLine
                             onPress={() => {handleMyInscriptions}}
                         />
