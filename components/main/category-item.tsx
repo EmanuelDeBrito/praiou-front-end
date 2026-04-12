@@ -1,5 +1,6 @@
 import { Text, Image, TouchableOpacity, ImageURISource, StyleSheet } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
+import { router } from "expo-router"
 
 type Props = {
     image: ImageURISource,
@@ -8,7 +9,7 @@ type Props = {
 
 export const CategoryItem = ({ image, label }: Props) => {
     const handlePress = () => {
-
+        router.push(`category/${label}`)
     }
 
     return(
