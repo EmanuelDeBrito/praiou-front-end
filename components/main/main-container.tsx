@@ -2,12 +2,13 @@ import { View, StyleSheet } from "react-native"
 import { ReactNode } from "react"
 
 type Props = {
+    vertical?: boolean,
     children: ReactNode
 }
 
-export const MainContainer = ({ children }: Props) => {
+export const MainContainer = ({ vertical, children }: Props) => {
     return(
-        <View style={styles.container}>
+        <View style={vertical ? [styles.container, styles.vertical] : styles.container}>
             {children}
         </View>
     )
@@ -16,5 +17,8 @@ export const MainContainer = ({ children }: Props) => {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 20
+    },
+    vertical: {
+        paddingVertical: 20
     }
 })

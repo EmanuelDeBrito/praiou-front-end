@@ -30,8 +30,8 @@ export const BackButton = () => {
 
 const styles = StyleSheet.create({
     container: {
-        width: 35,
-        height: 35,
+        width: 40,
+        height: 40,
         overflow: 'hidden',
         borderRadius: '50%'
     },
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     image: {
-        width: 20,
-        height: 20
+        width: 22,
+        height: 22
     }
 })

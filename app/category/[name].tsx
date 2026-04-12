@@ -9,7 +9,7 @@ const Screen = () => {
 
     return(
         <SafeContainer>
-            <MainContainer>
+            <MainContainer vertical>
                 <BackButton />
             </MainContainer>
         </SafeContainer>
