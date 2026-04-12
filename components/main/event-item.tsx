@@ -1,7 +1,9 @@
 import { View, Pressable, Image, StyleSheet } from "react-native"
 import { InfoItem } from "./info-item"
+import { categoryIconSwitch } from "../../utils/category-icon-switch"
 import { eventDateFormat } from "../../utils/date-format"
 import { eventHourFormat } from "../../utils/date-format"
+
 
 type Props = {
     id: number,
@@ -15,6 +17,7 @@ type Props = {
 export const EventItem = ({ id, name, address, type, date, hour }: Props) => {
     const formattedDate = eventDateFormat(date)
     const formattedHour = eventHourFormat(hour)
+    const eventIcon = categoryIconSwitch(type)
 
     return(
         <Pressable
@@ -24,7 +27,7 @@ export const EventItem = ({ id, name, address, type, date, hour }: Props) => {
             <View style={styles.imageArea}>
                 <Image
                     style={styles.sportImage}
-                    source={require('../../assets/interface-images/volei.png')}
+                    source={eventIcon}
                     resizeMode="cover"
                 />
             </View>
