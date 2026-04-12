@@ -9,7 +9,13 @@ export const InfoItem = ({ title, subtitle }: Props) => {
     return(
         <View style={styles.container}>
             <Text style={styles.infoTitle}>{title}</Text>
-            <Text style={styles.infoSubtitle}>{subtitle}</Text>
+            <Text 
+                style={styles.infoSubtitle}
+                numberOfLines={1}
+                ellipsizeMode="tail"
+            >
+                {subtitle}
+            </Text>
         </View>
     )
 }
@@ -17,7 +23,8 @@ export const InfoItem = ({ title, subtitle }: Props) => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        gap: 3
+        gap: 3,
+        width: 65
     },
     infoTitle: {
         color: "#4A4A4A",
@@ -26,7 +33,7 @@ const styles = StyleSheet.create({
     },
     infoSubtitle: {
         color: "#4A4A4A",
-        fontSize: 13,
+        fontSize: 14,
         fontFamily: "Indie-Regular"
     }
 })

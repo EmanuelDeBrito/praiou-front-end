@@ -26,22 +26,22 @@ export const EventItem = ({ idEvento, nome, endereco, tipoEvento, data, horario 
 
             <InfoItem 
                 title="Título"
-                subtitle="Futvôlei"
+                subtitle={nome}
             />
 
             <InfoItem 
                 title="Local"
-                subtitle="Suarão"
+                subtitle={endereco}
             />
 
             <InfoItem 
                 title="Data"
-                subtitle="25/02"
+                subtitle={"25/02"}
             />
 
             <InfoItem 
                 title="Horário"
-                subtitle="14:00"
+                subtitle={"14:00"}
             />
         </Pressable>
     )
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 15,
+        marginBottom: 15,
         backgroundColor: 'rgba(255, 205, 56, 0.7)',
         borderRadius: 20
     },
