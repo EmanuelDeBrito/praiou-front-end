@@ -14,6 +14,6 @@ const styles = StyleSheet.create({
     title: {
         color: '#4A4A4A',
         fontSize: 30,
-        fontFamily: 'Roboto-Medium'
+        fontFamily: 'Roboto-Regular'
     }
 })

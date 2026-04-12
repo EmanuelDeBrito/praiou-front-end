@@ -16,7 +16,7 @@ export const MainContainer = ({ vertical, children }: Props) => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
     },
     vertical: {
         paddingVertical: 20

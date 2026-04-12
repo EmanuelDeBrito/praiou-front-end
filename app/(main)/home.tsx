@@ -35,7 +35,7 @@ const Screen = () => {
     useEffect(() => {
         const takeAllEvents = async () => {
             const response = await getAllEvents(token)
-            console.log(response)
+            //console.log(response)
             
             if(response){
                 setEvents(response.eventos)
