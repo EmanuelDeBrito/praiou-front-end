@@ -1,6 +1,7 @@
 import { View, Pressable, Image, StyleSheet } from "react-native"
 import { InfoItem } from "./info-item"
 import { eventDateFormat } from "../../utils/date-format"
+import { eventHourFormat } from "../../utils/date-format"
 
 type Props = {
     id: number,
@@ -13,6 +14,7 @@ type Props = {
 
 export const EventItem = ({ id, name, address, type, date, hour }: Props) => {
     const formattedDate = eventDateFormat(date)
+    const formattedHour = eventHourFormat(hour)
 
     return(
         <Pressable
@@ -44,7 +46,7 @@ export const EventItem = ({ id, name, address, type, date, hour }: Props) => {
 
             <InfoItem 
                 title="Horário"
-                subtitle={"14:00"}
+                subtitle={formattedHour}
             />
         </Pressable>
     )
