@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet } from "react-native"
 import { SafeContainer } from "../../components/general/safe-container"
+import { MainContainer } from "../../components/main/main-container"
+import { BackButton } from "../../components/main/back-button"
 import { useLocalSearchParams } from "expo-router"
 
 const Screen = () => {
@@ -7,9 +9,9 @@ const Screen = () => {
 
     return(
         <SafeContainer>
-            <View style={styles.container}>
-                <Text style={styles.title}>Eventos de {name}</Text>
-            </View>
+            <MainContainer>
+                <BackButton />
+            </MainContainer>
         </SafeContainer>
     )
 }

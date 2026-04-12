@@ -1,15 +1,10 @@
-import { Text, Image, TouchableOpacity, ImageURISource, StyleSheet } from "react-native"
+import { TouchableOpacity, Image, StyleSheet } from "react-native"
 import { LinearGradient } from "expo-linear-gradient"
 import { router } from "expo-router"
 
-type Props = {
-    image: ImageURISource,
-    label: string
-}
-
-export const CategoryItem = ({ image, label }: Props) => {
+export const BackButton = () => {
     const handlePress = () => {
-        router.push(`/category/${label}`)
+        router.back()
     }
 
     return(
@@ -24,11 +19,10 @@ export const CategoryItem = ({ image, label }: Props) => {
                 end={{ x: 1, y: 0.5 }}
             >
                 <Image 
-                    style={styles.categoryImage}
-                    source={image}
+                    style={styles.image}
+                    source={require('../../assets/interface-images/arrow-back.png')}
                     resizeMode="cover"
                 />
-                <Text style={styles.categoryName}>{label}</Text>
             </LinearGradient>
         </TouchableOpacity>
     )
@@ -36,24 +30,18 @@ export const CategoryItem = ({ image, label }: Props) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: 60,
-        height: 60,
-        marginRight: 15,
+        width: 35,
+        height: 35,
         overflow: 'hidden',
-        borderRadius: 10,
+        borderRadius: '50%'
     },
     linearBackgroundArea: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     },
-    categoryImage: {
-        width: 30,
-        height: 30
-    },
-    categoryName: {
-        color: "#4A4A4A",
-        fontSize: 12,
-        fontFamily: 'Indie-Regular'
+    image: {
+        width: 20,
+        height: 20
     }
 })
