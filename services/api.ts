@@ -61,9 +61,24 @@ export const getAllEvents = async (token: string) => {
         const request = await req.get(
             "/api/eventos",
             { 
-                headers: {
-                    "Authorization": token
-                }
+                headers: { "Authorization": token }
+            }
+        )
+
+        return request.data
+    }catch(error: any){
+        if(error.response){
+            return error.response.data
+        }
+    }
+}
+
+export const getEventByCategory = async (token: string, category: string) => {
+    try{
+        const request = await req.get(
+            `/api/eventos/${category}`,
+            {
+                headers: { "Authorization": token }
             }
         )
 
