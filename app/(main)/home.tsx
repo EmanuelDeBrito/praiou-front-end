@@ -166,12 +166,12 @@ const Screen = () => {
                             data={events}
                             renderItem={({ item }) => (
                                 <EventItem 
-                                    idEvento={item.idEvento}
-                                    nome={item.nome}
-                                    endereco={item.endereco}
-                                    tipoEvento={item.tipoEvento}
-                                    data={item.data}
-                                    horario={item.horario}
+                                    id={item.idEvento}
+                                    name={item.nome}
+                                    address={item.endereco}
+                                    type={item.tipoEvento}
+                                    date={item.data}
+                                    hour={item.horario}
                                 />
                             )}
                             keyExtractor={item => item.idEvento.toString()}

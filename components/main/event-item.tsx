@@ -1,16 +1,19 @@
 import { View, Pressable, Image, StyleSheet } from "react-native"
 import { InfoItem } from "./info-item"
+import { eventDateFormat } from "../../utils/date-format"
 
 type Props = {
-    idEvento: number,
-    nome: string,
-    endereco: string,
-    tipoEvento: string,
-    data: number[],
-    horario: number[]
+    id: number,
+    name: string,
+    address: string,
+    type: string,
+    date: number[],
+    hour: number[]
 }
 
-export const EventItem = ({ idEvento, nome, endereco, tipoEvento, data, horario }: Props) => {
+export const EventItem = ({ id, name, address, type, date, hour }: Props) => {
+    const formattedDate = eventDateFormat(date)
+
     return(
         <Pressable
             style={styles.container}
@@ -26,17 +29,17 @@ export const EventItem = ({ idEvento, nome, endereco, tipoEvento, data, horario 
 
             <InfoItem 
                 title="Título"
-                subtitle={nome}
+                subtitle={name}
             />
 
             <InfoItem 
                 title="Local"
-                subtitle={endereco}
+                subtitle={address}
             />
 
             <InfoItem 
                 title="Data"
-                subtitle={"25/02"}
+                subtitle={formattedDate}
             />
 
             <InfoItem 
