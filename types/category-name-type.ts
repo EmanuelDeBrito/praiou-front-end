@@ -1,0 +1,1 @@
+export type CategoryNameType = "Futebol" | "Vôlei" | "Surf" | "Tênis" | "Corrida" | "Windsurf" | "Mergulho"

@@ -1,6 +1,7 @@
 import { ImageURISource } from "react-native"
+import { CategoryNameType } from "./category-name-type"
 
 export type CategoryType = {
-    name: string,
+    name: CategoryNameType,
     image: ImageURISource 
 }

@@ -73,7 +73,7 @@ export const getAllEvents = async (token: string) => {
     }
 }
 
-export const getEventByCategory = async (token: string, category: string) => {
+export const getEventsByCategory = async (token: string, category: string) => {
     try{
         const request = await req.get(
             `/api/eventos/${category}`,
