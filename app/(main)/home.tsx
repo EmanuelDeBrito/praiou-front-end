@@ -52,7 +52,7 @@ const Screen = () => {
                 points={1000}
             />
             
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <MainContainer>
                     <View style={styles.categoryArea}>
                         <MainSubtitle label="Categorias" />

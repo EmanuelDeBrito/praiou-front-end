@@ -1,26 +1,20 @@
-import { View, Text, StyleSheet } from "react-native"
+import { View, StyleSheet } from "react-native"
 import { SafeContainer } from "../../components/general/safe-container"
+import { MainContainer } from "../../components/main/main-container"
+import { UserPhoto } from "../../components/main/user-photo"
 
 const Screen = () => {
     return(
         <SafeContainer>
-            <View style={styles.container}>
-                <Text style={styles.title}>Profile</Text>
-            </View>
+            <MainContainer vertical>
+                <UserPhoto image="" />
+            </MainContainer>
         </SafeContainer>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    title: {
-        fontSize: 25,
-        fontWeight: '600'
-    }
+
 })
 
 export default Screen
