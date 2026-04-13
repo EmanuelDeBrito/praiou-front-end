@@ -16,8 +16,8 @@ export const UserPhoto = ({ image }: Props) => {
 
 const styles = StyleSheet.create({
     photo: {
-        width: 150,
-        height: 150,
+        width: 140,
+        height: 140,
         borderRadius: '50%'
     }
 })
