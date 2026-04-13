@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
     label: {
         color: '#4A4A4A',
-        fontSize: 17,
+        fontSize: 18,
         fontFamily: 'Indie-Regular'
     }
 })

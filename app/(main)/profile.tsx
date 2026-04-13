@@ -3,6 +3,7 @@ import { SafeContainer } from "../../components/general/safe-container"
 import { MainContainer } from "../../components/main/main-container"
 import { UserPhoto } from "../../components/main/user-photo"
 import { ProfileInfo } from "../../components/main/profile-info"
+import { Line } from "../../components/main/line"
 
 const Screen = () => {
     return(
@@ -29,6 +30,10 @@ const Screen = () => {
                             label="Jogador profissional de Futvôlei, amo fazer qualquer esporte e curtir uma praia com os amigos"
                         />
                     </View>
+
+                    <View style={styles.lineArea}>
+                        <Line gray />
+                    </View>
                 </MainContainer>
             </ScrollView>
         </SafeContainer>
@@ -42,6 +47,9 @@ const styles = StyleSheet.create({
     },
     userInfoArea: {
         gap: 10
+    },
+    lineArea: {
+        marginVertical: 25
     }
 })
 
