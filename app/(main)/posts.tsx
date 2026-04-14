@@ -3,6 +3,7 @@ import { SafeContainer } from "../../components/general/safe-container"
 import { MainContainer } from "../../components/main/main-container"
 import { MainTitle } from "../../components/main/main-title"
 import { RoundedIcon } from "../../components/main/rounded-icon"
+import { PostItem } from "../../components/main/post-item"
 
 const Screen = () => {
     return(
@@ -16,7 +17,7 @@ const Screen = () => {
                     />
                 </View>
 
-                
+                <PostItem />
             </MainContainer>
         </SafeContainer>
     )
