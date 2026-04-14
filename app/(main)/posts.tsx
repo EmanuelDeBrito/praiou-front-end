@@ -1,25 +1,32 @@
 import { View, Text, StyleSheet } from "react-native"
 import { SafeContainer } from "../../components/general/safe-container"
+import { MainContainer } from "../../components/main/main-container"
+import { MainTitle } from "../../components/main/main-title"
+import { RoundedIcon } from "../../components/main/rounded-icon"
 
 const Screen = () => {
     return(
         <SafeContainer>
-            <View style={styles.container}>
-                <Text style={styles.title}>Posts</Text>
-            </View>
+            <MainContainer vertical>
+                <View style={styles.headerArea}>
+                    <MainTitle label="Comunidade" />
+                    <RoundedIcon 
+                        icon="add-sharp"
+                        handlePress={() => {}}
+                    />
+                </View>
+
+                
+            </MainContainer>
         </SafeContainer>
     )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
+    headerArea: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center'
-    },
-    title: {
-        fontSize: 25,
-        fontWeight: '600'
     }
 })
 
