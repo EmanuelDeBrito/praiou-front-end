@@ -63,8 +63,7 @@ export const UserInfo = ({ userImage, userName, line }: Props) => {
 
 const styles = StyleSheet.create({
     container: {
-        gap: 10,
-        marginBottom: 10
+        gap: 10
     },
     userArea: {
         flexDirection: 'row',
